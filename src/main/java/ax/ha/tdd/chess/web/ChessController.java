@@ -23,4 +23,10 @@ public class ChessController {
         return "chess";
     }
 
+    @GetMapping({"/new"})
+    public String newGame() {
+        game = new Game();
+        return "redirect:/chess";
+    }
+
 }
