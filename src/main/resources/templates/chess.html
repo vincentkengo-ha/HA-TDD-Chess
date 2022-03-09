@@ -19,7 +19,6 @@
 </head>
 <body>
 <h2 class="hello-title" th:text="'Hello, ' + ${name} + '!'"></h2>
-<p>poo-poo  helluubo sso</p>
 <table class="chess-board" >
     <tbody>
     <tr>
@@ -34,8 +33,8 @@
         <th>h</th>
     </tr>
     <tr th:each="pieces, row: ${chessboard}">
-        <td th:text="(8 - ${row.index})"></td>
-        <td th:each="piece, col: ${pieces}">
+        <th th:text="(8 - ${row.index})"></th>
+        <td th:each="piece, col: ${pieces}" th:class="(${row.index} + ${col.index}) % 2 == 0? 'light' : 'dark'">
             <div th:text="${piece?.getUtf8Symbol()}"></div>
         </td>
     </tr>

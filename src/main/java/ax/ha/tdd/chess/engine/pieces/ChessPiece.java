@@ -22,6 +22,8 @@ public abstract class ChessPiece {
 
     public abstract String getSymbol();
 
+    public PieceType getPieceType() { return pieceType; }
+
     public Player getPlayer() {
         return player;
     }
@@ -30,26 +32,6 @@ public abstract class ChessPiece {
         return location;
     }
 
-    public String getUtf8Symbol() {
-        return switch (player) {
-            case BLACK -> switch (pieceType) {
-                case PAWN -> "♙";
-                case ROOK -> null;
-                case KNIGHT -> null;
-                case BISHOP -> null;
-                case QUEEN -> null;
-                case KING -> null;
-            };
-            case WHITE -> switch (pieceType) {
-                case PAWN -> "♟";
-                case ROOK -> null;
-                case KNIGHT -> null;
-                case BISHOP -> null;
-                case QUEEN -> null;
-                case KING -> null;
-            };
-        };
-    }
 
     /**
      * Suggestion of design:
