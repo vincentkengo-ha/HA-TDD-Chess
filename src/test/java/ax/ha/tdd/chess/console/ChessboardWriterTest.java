@@ -1,13 +1,14 @@
-package ax.ha.tdd.chess.engine;
+package ax.ha.tdd.chess.console;
 
+import ax.ha.tdd.chess.engine.Chessboard;
+import ax.ha.tdd.chess.engine.Coordinates;
+import ax.ha.tdd.chess.engine.Player;
 import ax.ha.tdd.chess.engine.pieces.ChessPieceStub;
 import ax.ha.tdd.chess.engine.pieces.PieceType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class ChessboardWriterTest {
-
-
 
     @Test
     public void print_emptyChessboard_printsOkay() {

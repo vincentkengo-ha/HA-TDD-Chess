@@ -1,5 +1,7 @@
-package ax.ha.tdd.chess.engine;
+package ax.ha.tdd.chess.console;
 
+import ax.ha.tdd.chess.engine.Chessboard;
+import ax.ha.tdd.chess.engine.Coordinates;
 import ax.ha.tdd.chess.engine.pieces.ChessPiece;
 
 public class ChessboardWriter {

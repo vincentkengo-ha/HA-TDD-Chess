@@ -4,6 +4,7 @@ public class Game {
 
     Chessboard board = Chessboard.startingBoard();
 
+    //Feel free to delete this stuff. Just for initial testing.
     boolean isNewGame = true;
 
     public Player getPlayerToMove() {
