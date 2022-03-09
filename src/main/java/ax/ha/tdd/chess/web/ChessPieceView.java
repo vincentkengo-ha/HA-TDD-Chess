@@ -2,8 +2,6 @@ package ax.ha.tdd.chess.web;
 
 import ax.ha.tdd.chess.engine.pieces.ChessPiece;
 
-import static ax.ha.tdd.chess.engine.pieces.PieceType.PAWN;
-
 public class ChessPieceView {
 
     private final ChessPiece chessPiece;

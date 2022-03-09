@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="'Hello, ' + ${name} + '!'"></title>
+    <title th:text="'TDD-Chess'"></title>
     <link href="/css/main.css" rel="stylesheet">
     <style>
             .chess-board { border-spacing: 0; border-collapse: collapse; }
@@ -18,7 +18,9 @@
     </style>
 </head>
 <body>
-<h2 class="hello-title" th:text="'Hello, ' + ${name} + '!'"></h2>
+<h2 class="hello-title" th:text="'TDD-Chess'"></h2>
+<p th:text="'Player to move: ' + ${player}"></p>
+<p th:text="'Last move result: ' + (${lastMoveResult}? ${lastMoveResult} : '')"></p>
 <table class="chess-board" >
     <tbody>
     <tr>
@@ -40,7 +42,13 @@
     </tr>
     </tbody>
 </table>
-<table class="chess-board">
+
+<form>
+    <label for="move">Your move (eg. a1-b1, O-O or O-O-O):</label>
+    <input type="text" id="move" name="move">
+    <input type="submit" value="Move">
+</form>
+<!--<table class="chess-board">
     <tbody>
     <tr>
         <th></th>
@@ -142,7 +150,7 @@
         <td class="light">♖</td>
     </tr>
     </tbody>
-</table>
+</table> -->
 <script src="/js/main.js"></script>
 
 </body>

@@ -13,7 +13,9 @@ public class ChessboardWriter {
                     stringBuilder.append(" * ");
                 }
                 else {
-                    stringBuilder.append(chessPiece.getPlayer().getSymbol() + "-" + chessPiece.getSymbol());
+                    stringBuilder.append(chessPiece.getPlayer().getSymbol())
+                            .append("-")
+                            .append(chessPiece.getSymbol());
                 }
 
                 if (x < 7) {
@@ -26,10 +28,5 @@ public class ChessboardWriter {
             }
         }
         return stringBuilder.toString();
-    }
-
-    public String printHTML(final Chessboard chessboard) {
-        String board = print(chessboard);
-        return board.replace("\n", "<br>");
     }
 }
