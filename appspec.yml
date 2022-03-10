@@ -1,13 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: 
+  - source: chess-0.0.1-SNAPSHOT.jar
     destination: /webapps/chess
 file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
-    - location: scripts/ApplicationStop.sh
+    - location: ApplicationStop.sh
   ApplicationStart:
-    - location: scripts/ApplicationStart.sh
+    - location: ApplicationStart.sh
   ValidateService:
-    - location: scripts/ValidateService.sh
+    - location: ValidateService.sh
