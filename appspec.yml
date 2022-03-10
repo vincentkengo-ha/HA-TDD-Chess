@@ -1,11 +1,13 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: 
     destination: /webapps/chess
 file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
-    - location: stop.sh
+    - location: scripts/ApplicationStop.sh
   ApplicationStart:
-    - location: start.sh
+    - location: scripts/ApplicationStart.sh
+  ValidateService:
+    - location: scripts/ValidateService.sh
