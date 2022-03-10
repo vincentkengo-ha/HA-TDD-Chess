@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /
     destination: /webapps/chess
+file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
     - location: stop.sh
