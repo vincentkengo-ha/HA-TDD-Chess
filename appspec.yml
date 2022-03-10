@@ -5,4 +5,4 @@ files:
     destination: /webapps/chess
 hooks:
   ApplicationStart:
-    - location: /webapps/chess/start.sh
+    - location: start.sh
