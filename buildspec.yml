@@ -8,6 +8,7 @@ phases:
             - yum install java-17-amazon-corretto-devel -y
             - update-alternatives --auto javac
             - update-alternatives --auto java
+            - ls /usr/lib/jvm
     build:
         commands:
             - ./mvnw test package
