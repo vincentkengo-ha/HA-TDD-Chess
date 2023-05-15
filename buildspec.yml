@@ -11,7 +11,7 @@ phases:
             - ls /usr/lib/jvm
     build:
         commands:
-            - ./mvnw test package
+            - mvn test package
 artifacts:
   files:
     - appspec.yml
