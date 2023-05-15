@@ -1,6 +1,5 @@
 package ax.ha.tdd.chess.web;
 
-import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.pieces.ChessPiece;
 
 import java.util.ArrayList;
@@ -10,9 +9,9 @@ import java.util.List;
 
 public class ChessboardView implements Iterable<List<ChessPieceView>> {
 
-    List<List<ChessPieceView>> board;
+    final List<List<ChessPieceView>> board;
 
-    public ChessboardView(Chessboard chessboard) {
+    public ChessboardView(Iterable<ChessPiece[]> chessboard) {
        board = new ArrayList<>();
        for (ChessPiece[] chessPieces : chessboard) {
            board.add(Arrays.stream(chessPieces)

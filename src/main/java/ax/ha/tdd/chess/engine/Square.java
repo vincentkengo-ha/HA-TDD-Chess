@@ -2,11 +2,11 @@ package ax.ha.tdd.chess.engine;
 
 import java.util.Objects;
 
-public class Coordinates {
+public class Square {
     private final int x;
     private final int y;
 
-    public Coordinates(int x, int y) {
+    public Square(int x, int y) {
         if (x < 0 || x > 7) {
             throw new IllegalArgumentException("x " + x + " is not valid");
         }
@@ -19,7 +19,7 @@ public class Coordinates {
     }
 
     // In case you want to use Algebraic notation when writing tests instead
-    public Coordinates(String algebraic) {
+    public Square(String algebraic) {
         char letter = algebraic.charAt(0);
         int number = Character.digit(algebraic.charAt(1), 10);
 
@@ -49,7 +49,7 @@ public class Coordinates {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Coordinates that = (Coordinates) o;
+        Square that = (Square) o;
         return x == that.x &&
                 y == that.y;
     }

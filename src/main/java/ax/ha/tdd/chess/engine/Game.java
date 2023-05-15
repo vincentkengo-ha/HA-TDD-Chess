@@ -1,33 +1,27 @@
 package ax.ha.tdd.chess.engine;
 
-public class Game {
+public interface Game {
 
-    Chessboard board = Chessboard.startingBoard();
+    /**
+     * Returns which player's turn it is
+     */
+    Player getPlayerToMove();
 
-    //Feel free to delete this stuff. Just for initial testing.
-    boolean isNewGame = true;
+    /**
+     * Current board state
+     */
+    Chessboard getBoard();
 
-    public Player getPlayerToMove() {
-        //TODO this should reflect the current state.
-        return Player.WHITE;
-    }
+    /**
+     * Returns a string that describes the result of the last move to be displayed to the user.
+     * e.g. "Illegal move: Pawn to e5" or "Knight g to f6", or something simpler.
+     */
+    String getLastMoveResult();
 
-    public Chessboard getBoard() {
-        return board;
-    }
+    /**
+     * Take a string representing the next move,
+     * and apply it to the board. Do nothing if the move is illegal
+     */
+    void move(String move);
 
-    public String getLastMoveResult() {
-        //TODO this should be used to show the player what happened
-        //Illegal move, correct move, e2 moved to e4 etc.
-        if (isNewGame) {
-            return "Game hasn't begun";
-        }
-        return "Last move was successful (default reply, change this)";
-    }
-
-    public void move(String move) {
-        //TODO this should trigger your move logic.
-        isNewGame = false;
-        System.out.println("Player tried to perform move: " + move);
-    }
 }

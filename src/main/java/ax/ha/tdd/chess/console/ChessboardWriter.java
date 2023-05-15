@@ -1,7 +1,7 @@
 package ax.ha.tdd.chess.console;
 
 import ax.ha.tdd.chess.engine.Chessboard;
-import ax.ha.tdd.chess.engine.Coordinates;
+import ax.ha.tdd.chess.engine.Square;
 import ax.ha.tdd.chess.engine.pieces.ChessPiece;
 
 public class ChessboardWriter {
@@ -10,7 +10,7 @@ public class ChessboardWriter {
         final StringBuilder stringBuilder = new StringBuilder();
         for (int y = 0; y < 8 ; y++) {
             for (int x = 0; x < 8 ; x++) {
-                final ChessPiece chessPiece = chessboard.getPiece(new Coordinates(x, y));
+                final ChessPiece chessPiece = chessboard.getPieceAt(new Square(x, y));
                 if (chessPiece == null) {
                     stringBuilder.append(" * ");
                 }

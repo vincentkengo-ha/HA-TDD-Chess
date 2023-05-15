@@ -1,6 +1,6 @@
 package ax.ha.tdd.chess.web;
 
-import ax.ha.tdd.chess.engine.Game;
+import ax.ha.tdd.chess.engine.GameImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ChessController {
 
-    Game game = new Game();
+    GameImpl game = new GameImpl();
 
     @GetMapping({"/", "/chess"})
     public String chess(Model model, @RequestParam(name = "move", required = false) String move) {
@@ -25,7 +25,7 @@ public class ChessController {
 
     @GetMapping({"/new"})
     public String newGame() {
-        game = new Game();
+        game = new GameImpl();
         return "redirect:/chess";
     }
 

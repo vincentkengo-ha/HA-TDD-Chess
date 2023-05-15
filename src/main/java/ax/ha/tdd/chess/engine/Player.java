@@ -4,7 +4,7 @@ public enum Player {
     WHITE("W"),
     BLACK("B");
 
-    private String symbol;
+    private final String symbol;
 
     Player(String symbol) {
         this.symbol = symbol;
