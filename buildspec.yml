@@ -10,7 +10,7 @@ phases:
             - update-alternatives --auto java
     build:
         commands:
-            - mvn test && mvn package
+            - ./mvnw test package
 artifacts:
   files:
     - appspec.yml
