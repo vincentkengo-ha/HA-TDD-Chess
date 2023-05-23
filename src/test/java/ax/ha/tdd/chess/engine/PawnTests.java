@@ -2,10 +2,12 @@ package ax.ha.tdd.chess.engine;
 
 import ax.ha.tdd.chess.console.ChessboardWriter;
 import ax.ha.tdd.chess.engine.pieces.ChessPiece;
+import ax.ha.tdd.chess.engine.pieces.Pawn;
 import ax.ha.tdd.chess.engine.pieces.PieceType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PawnTests {
 
@@ -29,5 +31,14 @@ public class PawnTests {
         //to implement a command line interface for the game
         System.out.println(new ChessboardWriter().print(game.getBoard()));
 
+    }
+
+    @Test
+    public void testWhitePawnForwardOneStepUnblocked(){
+        //Here's a lower level test, we just check that the internal logic of the pawn is correct.
+        //We should be allowed to move one step forward to an empty square
+        Chessboard chessboard = new ChessboardImpl();
+        Pawn e2 = new Pawn(Player.WHITE, new Square("e2"));
+        assertTrue(e2.canMove(chessboard, new Square("e3")));
     }
 }

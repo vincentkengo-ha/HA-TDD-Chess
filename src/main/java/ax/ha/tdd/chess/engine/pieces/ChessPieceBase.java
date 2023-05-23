@@ -1,6 +1,6 @@
 package ax.ha.tdd.chess.engine.pieces;
 
-import ax.ha.tdd.chess.engine.ChessboardImpl;
+import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
 import ax.ha.tdd.chess.engine.Player;
 
@@ -43,7 +43,7 @@ public abstract class ChessPieceBase implements ChessPiece {
      * @param destination destination
      * @return true if piece can move to the destination
      */
-    public abstract boolean canMove(final ChessboardImpl chessboard, final Square destination);
+    public abstract boolean canMove(final Chessboard chessboard, final Square destination);
 
     @Override
     public boolean equals(Object o) {

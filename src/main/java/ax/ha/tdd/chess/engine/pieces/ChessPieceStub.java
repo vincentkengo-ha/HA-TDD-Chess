@@ -1,6 +1,6 @@
 package ax.ha.tdd.chess.engine.pieces;
 
-import ax.ha.tdd.chess.engine.ChessboardImpl;
+import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
 import ax.ha.tdd.chess.engine.Player;
 
@@ -28,7 +28,7 @@ public class ChessPieceStub extends ChessPieceBase {
     }
 
     @Override
-    public boolean canMove(ChessboardImpl chessboard, Square destination) {
+    public boolean canMove(Chessboard chessboard, Square destination) {
         throw new UnsupportedOperationException("canMove has/will not be implemented in stub class");
     }
 }

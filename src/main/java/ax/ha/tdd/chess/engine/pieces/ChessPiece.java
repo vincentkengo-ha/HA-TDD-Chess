@@ -1,5 +1,6 @@
 package ax.ha.tdd.chess.engine.pieces;
 
+import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
 import ax.ha.tdd.chess.engine.Player;
 
@@ -20,4 +21,6 @@ public interface ChessPiece {
     Player getPlayer();
 
     Square getLocation();
+
+    boolean canMove(Chessboard chessboard, Square destination);
 }
