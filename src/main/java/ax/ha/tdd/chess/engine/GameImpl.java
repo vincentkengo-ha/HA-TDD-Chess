@@ -4,7 +4,8 @@ public class GameImpl implements Game{
 
     final ChessboardImpl board = ChessboardImpl.startingBoard();
 
-    //Feel free to delete this stuff. Just for initial testing.
+    // Feel free to delete "isNewGame".
+    // It's just used to display a different message at the start of the game.
     boolean isNewGame = true;
 
     @Override
@@ -31,6 +32,12 @@ public class GameImpl implements Game{
     @Override
     public void move(String move) {
         //TODO this should trigger your move logic.
+        //1. Parse the source and destination of the input "move"
+
+        //2. Check if the piece is allowed to move to the destination
+
+        //3. If so, update board (and last move message), otherwise only update last move message to show that an illegal move was tried
+
         isNewGame = false;
         System.out.println("Player tried to perform move: " + move);
     }

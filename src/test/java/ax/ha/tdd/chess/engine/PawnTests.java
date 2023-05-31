@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PawnTests {
 
-    //If you use exceptions for your illegal moves, change this test to expect an exception instead.
     @Test
     public void testMoveMoreThanTwoSquaresAtStartShouldBeIllegal(){
         //Arrange
