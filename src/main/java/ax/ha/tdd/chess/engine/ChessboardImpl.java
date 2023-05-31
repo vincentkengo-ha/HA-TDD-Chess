@@ -1,9 +1,6 @@
 package ax.ha.tdd.chess.engine;
 
-import ax.ha.tdd.chess.engine.pieces.ChessPiece;
-import ax.ha.tdd.chess.engine.pieces.ChessPieceBase;
-import ax.ha.tdd.chess.engine.pieces.ChessPieceStub;
-import ax.ha.tdd.chess.engine.pieces.PieceType;
+import ax.ha.tdd.chess.engine.pieces.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -37,7 +34,7 @@ public class ChessboardImpl implements Chessboard {
 
     @Override
     public void removePieceAt(Square square) {
-        //TODO implement
+        board[square.getY()][square.getX()] = null;
     }
 
     /**
@@ -53,8 +50,17 @@ public class ChessboardImpl implements Chessboard {
     private ChessboardImpl withMirroredPiece(final PieceType pieceType,
                                              final List<Integer> xCoordinates, final int yCoordinate) {
         xCoordinates.forEach(xCoordinate -> {
-            addPiece(new ChessPieceStub(pieceType, Player.BLACK, new Square(xCoordinate, yCoordinate)));
-            addPiece(new ChessPieceStub(pieceType, Player.WHITE, new Square(xCoordinate, 7 - yCoordinate)));
+            switch (pieceType) {
+                case PAWN -> {
+                    addPiece(new Pawn(Color.BLACK, new Square(xCoordinate, yCoordinate)));
+                    addPiece(new Pawn(Color.WHITE, new Square(xCoordinate, 7 - yCoordinate)));
+                }
+                //TODO, when you implement a piece, add it as a case in this switch
+                default ->  {
+                    addPiece(new ChessPieceStub(pieceType, Color.BLACK, new Square(xCoordinate, yCoordinate)));
+                    addPiece(new ChessPieceStub(pieceType, Color.WHITE, new Square(xCoordinate, 7 - yCoordinate)));
+                }
+            }
         });
         return this;
     }

@@ -16,7 +16,7 @@ public class ChessController {
         if (move != null && !move.isEmpty()) {
             game.move(move);
         }
-        model.addAttribute("player", new PlayerView(game.getPlayerToMove()));
+        model.addAttribute("player", new ColorView(game.getPlayerToMove()));
         model.addAttribute("lastMoveResult", game.getLastMoveResult());
         model.addAttribute("chessboard",
                 new ChessboardView(game.getBoard()));

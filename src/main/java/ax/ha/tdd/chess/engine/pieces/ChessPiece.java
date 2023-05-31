@@ -2,7 +2,7 @@ package ax.ha.tdd.chess.engine.pieces;
 
 import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
-import ax.ha.tdd.chess.engine.Player;
+import ax.ha.tdd.chess.engine.Color;
 
 public interface ChessPiece {
     /**
@@ -13,14 +13,20 @@ public interface ChessPiece {
     /**
      * Is it a rook, pawn, queen, etc?
      */
-    PieceType getPieceType();
+    PieceType getType();
 
     /**
      * White or black?
      */
-    Player getPlayer();
+    Color getColor();
 
+    /**
+     * On what square is this piece?
+     */
     Square getLocation();
 
+    /**
+     * Can the piece move to the destination square on this chessboard?
+     */
     boolean canMove(Chessboard chessboard, Square destination);
 }

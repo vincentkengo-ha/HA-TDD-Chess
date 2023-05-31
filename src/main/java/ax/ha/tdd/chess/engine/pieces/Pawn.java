@@ -2,17 +2,12 @@ package ax.ha.tdd.chess.engine.pieces;
 
 import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
-import ax.ha.tdd.chess.engine.Player;
+import ax.ha.tdd.chess.engine.Color;
 
 public class Pawn extends ChessPieceBase implements ChessPiece{
 
-    public Pawn(Player player, Square location) {
+    public Pawn(Color player, Square location) {
         super(PieceType.PAWN, player, location);
-    }
-
-    @Override
-    public String getSymbol() {
-        return null;
     }
 
     @Override

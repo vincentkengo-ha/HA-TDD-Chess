@@ -11,8 +11,8 @@ public class ChessPieceView {
     }
 
     public String getUtf8Symbol() {
-        return switch (chessPiece.getPlayer()) {
-            case BLACK -> switch (chessPiece.getPieceType()) {
+        return switch (chessPiece.getColor()) {
+            case BLACK -> switch (chessPiece.getType()) {
                 case PAWN -> "♟";
                 case ROOK -> "♜";
                 case KNIGHT -> "♞";
@@ -20,7 +20,7 @@ public class ChessPieceView {
                 case QUEEN -> "♛";
                 case KING -> "♚";
             };
-            case WHITE -> switch (chessPiece.getPieceType()) {
+            case WHITE -> switch (chessPiece.getType()) {
                 case PAWN -> "♙";
                 case ROOK -> "♖";
                 case KNIGHT -> "♘";

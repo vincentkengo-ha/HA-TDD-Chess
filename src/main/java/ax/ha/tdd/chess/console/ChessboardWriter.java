@@ -15,7 +15,7 @@ public class ChessboardWriter {
                     stringBuilder.append(" * ");
                 }
                 else {
-                    stringBuilder.append(chessPiece.getPlayer().getSymbol())
+                    stringBuilder.append(chessPiece.getColor().getSymbol())
                             .append("-")
                             .append(chessPiece.getSymbol());
                 }

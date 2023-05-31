@@ -2,7 +2,7 @@ package ax.ha.tdd.chess.console;
 
 import ax.ha.tdd.chess.engine.ChessboardImpl;
 import ax.ha.tdd.chess.engine.Square;
-import ax.ha.tdd.chess.engine.Player;
+import ax.ha.tdd.chess.engine.Color;
 import ax.ha.tdd.chess.engine.pieces.ChessPieceStub;
 import ax.ha.tdd.chess.engine.pieces.PieceType;
 import org.junit.jupiter.api.Assertions;
@@ -50,7 +50,7 @@ public class ChessboardWriterTests {
 
                 " *    *    *    *    *    *    *    * \n";
         ChessboardImpl chessboard = new ChessboardImpl();
-        chessboard.addPiece(new ChessPieceStub(PieceType.PAWN, Player.BLACK, new Square(2, 4)));
+        chessboard.addPiece(new ChessPieceStub(PieceType.PAWN, Color.BLACK, new Square(2, 4)));
         Assertions.assertEquals(expectedChessboard, new ChessboardWriter().print(chessboard));
     }
 

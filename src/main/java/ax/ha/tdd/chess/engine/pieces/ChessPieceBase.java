@@ -2,30 +2,32 @@ package ax.ha.tdd.chess.engine.pieces;
 
 import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Square;
-import ax.ha.tdd.chess.engine.Player;
+import ax.ha.tdd.chess.engine.Color;
 
 import java.util.Objects;
 
 public abstract class ChessPieceBase implements ChessPiece {
 
-    protected final Player player;
-    protected final PieceType pieceType;
+    protected final Color color;
+    protected final PieceType type;
 
     protected Square location;
 
-    public ChessPieceBase(PieceType pieceType, final Player player,
+    public ChessPieceBase(PieceType type, final Color player,
                           final Square location) {
-        this.pieceType = pieceType;
-        this.player = player;
+        this.type = type;
+        this.color = player;
         this.location = location;
     }
 
-    public abstract String getSymbol();
+    public final String getSymbol() {
+        return type.getSymbol();
+    }
 
-    public PieceType getPieceType() { return pieceType; }
+    public PieceType getType() { return type; }
 
-    public Player getPlayer() {
-        return player;
+    public Color getColor() {
+        return color;
     }
 
     public Square getLocation() {
@@ -50,16 +52,16 @@ public abstract class ChessPieceBase implements ChessPiece {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ChessPieceBase that = (ChessPieceBase) o;
-        return player == that.player && pieceType == that.pieceType;
+        return color == that.color && type == that.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(player, pieceType);
+        return Objects.hash(color, type);
     }
 
     @Override
     public String toString() {
-        return getPlayer().name() + " " + getClass().getSimpleName();
+        return getColor().name() + " " + getClass().getSimpleName();
     }
 }

@@ -1,12 +1,12 @@
 package ax.ha.tdd.chess.engine;
 
-public enum Player {
+public enum Color {
     WHITE("W"),
     BLACK("B");
 
     private final String symbol;
 
-    Player(String symbol) {
+    Color(String symbol) {
         this.symbol = symbol;
     }
 

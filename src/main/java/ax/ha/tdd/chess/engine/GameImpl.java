@@ -8,9 +8,9 @@ public class GameImpl implements Game{
     boolean isNewGame = true;
 
     @Override
-    public Player getPlayerToMove() {
+    public Color getPlayerToMove() {
         //TODO this should reflect the current state.
-        return Player.WHITE;
+        return Color.WHITE;
     }
 
     @Override

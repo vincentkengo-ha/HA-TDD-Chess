@@ -5,7 +5,7 @@ public interface Game {
     /**
      * Returns which player's turn it is
      */
-    Player getPlayerToMove();
+    Color getPlayerToMove();
 
     /**
      * Current board state

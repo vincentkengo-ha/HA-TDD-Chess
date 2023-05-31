@@ -22,7 +22,7 @@ public class ChessboardTests {
         final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
         for (int x = 0; x < 8; x++) {
             for (int y = 6; y < 8; y++) {
-                Assertions.assertEquals(Player.WHITE, chessboard.getPieceAt(new Square(x, y)).getPlayer());
+                Assertions.assertEquals(Color.WHITE, chessboard.getPieceAt(new Square(x, y)).getColor());
             }
         }
     }
@@ -32,7 +32,7 @@ public class ChessboardTests {
         final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 2; y++) {
-                Assertions.assertEquals(Player.BLACK, chessboard.getPieceAt(new Square(x, y)).getPlayer());
+                Assertions.assertEquals(Color.BLACK, chessboard.getPieceAt(new Square(x, y)).getColor());
             }
         }
     }
@@ -76,14 +76,14 @@ public class ChessboardTests {
     @Test
     public void fullboard_Kings_areInCorrectSpot() {
         final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
-        Assertions.assertEquals(new ChessPieceStub(PieceType.KING, Player.BLACK), chessboard.getPieceAt(new Square(4, 0)));
-        Assertions.assertEquals(new ChessPieceStub(PieceType.KING, Player.WHITE), chessboard.getPieceAt(new Square(4, 7)));
+        Assertions.assertEquals(new ChessPieceStub(PieceType.KING, Color.BLACK), chessboard.getPieceAt(new Square(4, 0)));
+        Assertions.assertEquals(new ChessPieceStub(PieceType.KING, Color.WHITE), chessboard.getPieceAt(new Square(4, 7)));
     }
 
     @Test
     public void fullboard_Queens_areInCorrectSpot() {
         final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
-        Assertions.assertEquals(new ChessPieceStub(PieceType.QUEEN, Player.BLACK), chessboard.getPieceAt(new Square(3, 0)));
-        Assertions.assertEquals(new ChessPieceStub(PieceType.QUEEN, Player.WHITE), chessboard.getPieceAt(new Square(3, 7)));
+        Assertions.assertEquals(new ChessPieceStub(PieceType.QUEEN, Color.BLACK), chessboard.getPieceAt(new Square(3, 0)));
+        Assertions.assertEquals(new ChessPieceStub(PieceType.QUEEN, Color.WHITE), chessboard.getPieceAt(new Square(3, 7)));
     }
 }
