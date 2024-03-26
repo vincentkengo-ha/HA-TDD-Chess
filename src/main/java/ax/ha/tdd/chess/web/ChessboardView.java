@@ -13,6 +13,7 @@ public class ChessboardView implements Iterable<List<ChessPieceView>> {
 
     public ChessboardView(Iterable<ChessPiece[]> chessboard) {
        board = new ArrayList<>();
+
        for (ChessPiece[] chessPieces : chessboard) {
            board.add(Arrays.stream(chessPieces)
                    .map(x -> {if (x == null) {return null;} else {return new ChessPieceView(x);}})

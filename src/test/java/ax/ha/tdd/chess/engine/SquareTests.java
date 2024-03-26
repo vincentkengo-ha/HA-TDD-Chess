@@ -20,38 +20,24 @@ public class SquareTests {
 
     @Test
     public void givenBadAlgebraicNotationExpectIllegalArgumentException() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square("A1");
-        });
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square("I1");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square("A1"));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square("a0");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square("I1"));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square("a9");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square("a0"));
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square("a9"));
     }
 
 
     @Test
     public void givenBadIndexesExpectIllegalArgumentException() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square(-1,1);
-        });
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square(0,-1);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square(-1, 1));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square(8,0);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square(0, -1));
 
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new Square(0,8);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square(8, 0));
+
+        Assertions.assertThrows(IllegalArgumentException.class, () -> new Square(0, 8));
     }
 }

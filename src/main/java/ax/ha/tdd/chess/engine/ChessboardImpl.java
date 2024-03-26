@@ -15,10 +15,10 @@ public class ChessboardImpl implements Chessboard {
     public static ChessboardImpl startingBoard() {
         final ChessboardImpl chessboard = new ChessboardImpl();
 
-        chessboard.withMirroredPiece(PieceType.PAWN, List.of(0,1,2,3,4,5,6,7), 1)
-                .withMirroredPiece(PieceType.ROOK, List.of(0,7), 0)
-                .withMirroredPiece(PieceType.KNIGHT, List.of(1,6), 0)
-                .withMirroredPiece(PieceType.BISHOP, List.of(2,5), 0)
+        chessboard.withMirroredPiece(PieceType.PAWN, List.of(0, 1, 2, 3, 4, 5, 6, 7), 1)
+                .withMirroredPiece(PieceType.ROOK, List.of(0, 7), 0)
+                .withMirroredPiece(PieceType.KNIGHT, List.of(1, 6), 0)
+                .withMirroredPiece(PieceType.BISHOP, List.of(2, 5), 0)
                 .withMirroredPiece(PieceType.QUEEN, List.of(3), 0)
                 .withMirroredPiece(PieceType.KING, List.of(4), 0);
         return chessboard;
@@ -42,9 +42,9 @@ public class ChessboardImpl implements Chessboard {
      * Basically mirrors all added pieces for both players.
      * When all pieces has been implemented, this should be replaced with the proper implementations.
      *
-     * @param pieceType pieceType
+     * @param pieceType    pieceType
      * @param xCoordinates xCoordinates
-     * @param yCoordinate yCoordinateOffset
+     * @param yCoordinate  yCoordinateOffset
      * @return itself, like a builder pattern
      */
     private ChessboardImpl withMirroredPiece(final PieceType pieceType,
@@ -56,7 +56,7 @@ public class ChessboardImpl implements Chessboard {
                     addPiece(new Pawn(Color.WHITE, new Square(xCoordinate, 7 - yCoordinate)));
                 }
                 //TODO, when you implement a piece, add it as a case in this switch
-                default ->  {
+                default -> {
                     addPiece(new ChessPieceStub(pieceType, Color.BLACK, new Square(xCoordinate, yCoordinate)));
                     addPiece(new ChessPieceStub(pieceType, Color.WHITE, new Square(xCoordinate, 7 - yCoordinate)));
                 }

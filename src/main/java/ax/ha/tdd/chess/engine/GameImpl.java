@@ -4,8 +4,6 @@ public class GameImpl implements Game{
 
     final ChessboardImpl board = ChessboardImpl.startingBoard();
 
-    // Feel free to delete "isNewGame".
-    // It's just used to display a different message at the start of the game.
     boolean isNewGame = true;
 
     @Override

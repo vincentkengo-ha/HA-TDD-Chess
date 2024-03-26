@@ -11,67 +11,73 @@ import org.junit.jupiter.api.Test;
 public class ChessboardWriterTests {
 
     @Test
-    public void print_emptyChessboard_printsOkay() {
-        final String expectedChessboard= 
-                " *    *    *    *    *    *    *    * \n\n" +
+    public void testPrintEmptyChessboard() {
+        final String expectedChessboard =
+                """
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
-                                            
-                " *    *    *    *    *    *    *    * \n\n" +
-                                            
-                " *    *    *    *    *    *    *    * \n\n" +
-                                            
-                " *    *    *    *    *    *    *    * \n\n" +
-                                            
-                " *    *    *    *    *    *    *    * \n";
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+                        """;
         Assertions.assertEquals(expectedChessboard, new ChessboardWriter().print(new ChessboardImpl()));
     }
 
     @Test
-    public void print_chessboardWithSinglePawn_printsOkay() {
-        final String expectedChessboard=
-                " *    *    *    *    *    *    *    * \n\n" +
+    public void testPrintChessboardWithSinglePawn() {
+        final String expectedChessboard =
+                """
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *   B-P   *    *    *    *    * \n\n" +
+                         *    *   B-P   *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n\n" +
+                         *    *    *    *    *    *    *    *\s
 
-                " *    *    *    *    *    *    *    * \n";
+                         *    *    *    *    *    *    *    *\s
+                        """;
         ChessboardImpl chessboard = new ChessboardImpl();
         chessboard.addPiece(new ChessPieceStub(PieceType.PAWN, Color.BLACK, new Square(2, 4)));
         Assertions.assertEquals(expectedChessboard, new ChessboardWriter().print(chessboard));
     }
 
     @Test
-    public void print_fullChessboard_printsOkay() {
-        final String expectedChessboard=
-               "B-R  B-K  B-B  B-Q  B-K  B-B  B-K  B-R\n\n" +
-                                            
-               "B-P  B-P  B-P  B-P  B-P  B-P  B-P  B-P\n\n" +
-                                            
-               " *    *    *    *    *    *    *    * \n\n" +
-                                            
-               " *    *    *    *    *    *    *    * \n\n" +
-                                            
-               " *    *    *    *    *    *    *    * \n\n" +
-                                            
-               " *    *    *    *    *    *    *    * \n\n" +
-                                            
-               "W-P  W-P  W-P  W-P  W-P  W-P  W-P  W-P\n\n" +
-                                            
-               "W-R  W-K  W-B  W-Q  W-K  W-B  W-K  W-R\n";
+    public void testPrintStartingBoard() {
+        final String expectedChessboard =
+                """
+                        B-R  B-K  B-B  B-Q  B-K  B-B  B-K  B-R
+
+                        B-P  B-P  B-P  B-P  B-P  B-P  B-P  B-P
+
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+
+                         *    *    *    *    *    *    *    *\s
+
+                        W-P  W-P  W-P  W-P  W-P  W-P  W-P  W-P
+
+                        W-R  W-K  W-B  W-Q  W-K  W-B  W-K  W-R
+                                """;
         final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
 
         Assertions.assertEquals(expectedChessboard, new ChessboardWriter().print(chessboard));
