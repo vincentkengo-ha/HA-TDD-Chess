@@ -40,7 +40,7 @@ public class ChessboardImpl implements Chessboard {
     /**
      * Helper method to initialize chessboard with {@link ChessPieceStub}.
      * Basically mirrors all added pieces for both players.
-     * When all pieces has been implemented, this should be replaced with the proper implementations.
+     * When all pieces have been implemented, this should be replaced with the proper implementations.
      *
      * @param pieceType    pieceType
      * @param xCoordinates xCoordinates

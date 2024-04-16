@@ -3,7 +3,7 @@ package ax.ha.tdd.chess.engine.pieces;
 public enum PieceType {
     PAWN("P"),
     ROOK("R"),
-    KNIGHT("K"),
+    KNIGHT("k"),
     BISHOP("B"),
     QUEEN("Q"),
     KING("K");

@@ -16,7 +16,7 @@ public class ChessboardTests {
 
     @Test
     public void testNewChessboardIsEmpty() {
-        final ChessboardImpl chessboard = new ChessboardImpl();
+        final Chessboard chessboard = new ChessboardImpl();
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 8; y++) {
                 Assertions.assertNull(chessboard.getPieceAt(new Square(x, y)));
@@ -26,7 +26,7 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardWhitePiecesInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         for (int x = 0; x < 8; x++) {
             for (int y = 6; y < 8; y++) {
                 Assertions.assertEquals(Color.WHITE, chessboard.getPieceAt(new Square(x, y)).getColor());
@@ -36,7 +36,7 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardBlackPiecesInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         for (int x = 0; x < 8; x++) {
             for (int y = 0; y < 2; y++) {
                 Assertions.assertEquals(Color.BLACK, chessboard.getPieceAt(new Square(x, y)).getColor());
@@ -46,7 +46,7 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardPawnsInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         for (int x = 0; x < 8; x++) {
             Assertions.assertEquals("P", chessboard.getPieceAt(new Square(x, 1)).getSymbol());
             Assertions.assertEquals("P", chessboard.getPieceAt(new Square(x, 6)).getSymbol());
@@ -55,7 +55,7 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardRooksInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         Assertions.assertEquals("R", chessboard.getPieceAt(new Square(0, 0)).getSymbol());
         Assertions.assertEquals("R", chessboard.getPieceAt(new Square(7, 0)).getSymbol());
         Assertions.assertEquals("R", chessboard.getPieceAt(new Square(0, 7)).getSymbol());
@@ -64,7 +64,7 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardKnightsInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         Assertions.assertEquals("K", chessboard.getPieceAt(new Square(1, 0)).getSymbol());
         Assertions.assertEquals("K", chessboard.getPieceAt(new Square(6, 0)).getSymbol());
         Assertions.assertEquals("K", chessboard.getPieceAt(new Square(1, 7)).getSymbol());
@@ -73,7 +73,7 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardBishopsInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         Assertions.assertEquals("B", chessboard.getPieceAt(new Square(2, 0)).getSymbol());
         Assertions.assertEquals("B", chessboard.getPieceAt(new Square(5, 0)).getSymbol());
         Assertions.assertEquals("B", chessboard.getPieceAt(new Square(2, 7)).getSymbol());
@@ -82,21 +82,21 @@ public class ChessboardTests {
 
     @Test
     public void testStartingBoardKingsInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         Assertions.assertEquals(new ChessPieceStub(PieceType.KING, Color.BLACK), chessboard.getPieceAt(new Square(4, 0)));
         Assertions.assertEquals(new ChessPieceStub(PieceType.KING, Color.WHITE), chessboard.getPieceAt(new Square(4, 7)));
     }
 
     @Test
     public void testStartingBoardQueensInTheRightSpot() {
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
         Assertions.assertEquals(new ChessPieceStub(PieceType.QUEEN, Color.BLACK), chessboard.getPieceAt(new Square(3, 0)));
         Assertions.assertEquals(new ChessPieceStub(PieceType.QUEEN, Color.WHITE), chessboard.getPieceAt(new Square(3, 7)));
     }
 
     @Test
     public void testChessboardIteratesByRows(){
-        final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
+        final Chessboard chessboard = ChessboardImpl.startingBoard();
 
         Iterator<ChessPiece[]> iterator = chessboard.iterator();
         ChessPiece[] row8 = iterator.next();
