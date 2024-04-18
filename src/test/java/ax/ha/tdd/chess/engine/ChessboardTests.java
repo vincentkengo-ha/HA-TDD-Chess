@@ -65,10 +65,10 @@ public class ChessboardTests {
     @Test
     public void testStartingBoardKnightsInTheRightSpot() {
         final Chessboard chessboard = ChessboardImpl.startingBoard();
-        Assertions.assertEquals("K", chessboard.getPieceAt(new Square(1, 0)).getSymbol());
-        Assertions.assertEquals("K", chessboard.getPieceAt(new Square(6, 0)).getSymbol());
-        Assertions.assertEquals("K", chessboard.getPieceAt(new Square(1, 7)).getSymbol());
-        Assertions.assertEquals("K", chessboard.getPieceAt(new Square(6, 7)).getSymbol());
+        Assertions.assertEquals("k", chessboard.getPieceAt(new Square(1, 0)).getSymbol());
+        Assertions.assertEquals("k", chessboard.getPieceAt(new Square(6, 0)).getSymbol());
+        Assertions.assertEquals("k", chessboard.getPieceAt(new Square(1, 7)).getSymbol());
+        Assertions.assertEquals("k", chessboard.getPieceAt(new Square(6, 7)).getSymbol());
     }
 
     @Test

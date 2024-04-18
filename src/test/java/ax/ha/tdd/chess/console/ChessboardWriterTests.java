@@ -62,7 +62,7 @@ public class ChessboardWriterTests {
     public void testPrintStartingBoard() {
         final String expectedChessboard =
                 """
-                        B-R  B-K  B-B  B-Q  B-K  B-B  B-K  B-R
+                        B-R  B-k  B-B  B-Q  B-K  B-B  B-k  B-R
 
                         B-P  B-P  B-P  B-P  B-P  B-P  B-P  B-P
 
@@ -76,7 +76,7 @@ public class ChessboardWriterTests {
 
                         W-P  W-P  W-P  W-P  W-P  W-P  W-P  W-P
 
-                        W-R  W-K  W-B  W-Q  W-K  W-B  W-K  W-R
+                        W-R  W-k  W-B  W-Q  W-K  W-B  W-k  W-R
                                 """;
         final ChessboardImpl chessboard = ChessboardImpl.startingBoard();
 
