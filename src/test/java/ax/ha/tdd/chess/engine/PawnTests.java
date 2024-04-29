@@ -76,4 +76,5 @@ public class PawnTests {
         System.out.println(new ChessboardWriter().print(chessboard));
         //Piece not actually moving why?
     }
+
 }
