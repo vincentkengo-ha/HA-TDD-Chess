@@ -14,7 +14,6 @@ public class Pawn extends ChessPieceBase implements ChessPiece{
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-        //TODO here goes move logic for pawns
 
         //first move
         System.out.println(this.location.getY() + " " + destination.getY());
