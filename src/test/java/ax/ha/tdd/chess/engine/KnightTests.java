@@ -20,6 +20,7 @@ public class KnightTests {
         chessboard.addPiece(knight);
 
         assertFalse(knight.canMove(chessboard, new Square("h8")));
+        assertFalse(knight.canMove(chessboard, new Square("a1")));
     }
 
     @Test
@@ -29,6 +30,7 @@ public class KnightTests {
         chessboard.addPiece(knight);
 
         assertTrue(knight.canMove(chessboard, new Square("c3")));
+
     }
 
     @Test

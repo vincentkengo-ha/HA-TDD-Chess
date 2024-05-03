@@ -21,6 +21,7 @@ public class PawnTests {
 
         //Assert
         assertFalse(pawn.canMove(chessboard, new Square("e1")));
+        assertFalse(pawn.canMove(chessboard, new Square("e2")));
 
         //For debugging, you can print the board to console, or if you want
         //to implement a command line interface for the game

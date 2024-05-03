@@ -4,6 +4,8 @@ import ax.ha.tdd.chess.engine.Chessboard;
 import ax.ha.tdd.chess.engine.Color;
 import ax.ha.tdd.chess.engine.Square;
 
+import java.util.Objects;
+
 public class Bishop extends ChessPieceBase implements ChessPiece{
     public Bishop(Color player, Square location) {
         super(PieceType.BISHOP, player, location);
@@ -11,7 +13,7 @@ public class Bishop extends ChessPieceBase implements ChessPiece{
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-        if(Math.abs(this.location.getX() - destination.getX()) != Math.abs(this.location.getY() - destination.getY())) {
+        if(Math.abs(this.location.getX() - destination.getX()) != Math.abs(this.location.getY() - destination.getY()) || Objects.equals(this.location.toAlgebraic(), destination.toAlgebraic())) {
             return false;
         }
 

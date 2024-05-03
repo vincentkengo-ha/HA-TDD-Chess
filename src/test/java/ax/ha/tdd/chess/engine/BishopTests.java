@@ -14,6 +14,7 @@ public class BishopTests {
         chessboard.addPiece(bishop);
 
         assertFalse(bishop.canMove(chessboard, new Square("a8")));
+        assertFalse(bishop.canMove(chessboard, new Square("a1")));
     }
 
     @Test

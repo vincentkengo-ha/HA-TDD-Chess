@@ -20,6 +20,7 @@ public class RookTests {
         chessboard.addPiece(rook);
 
         assertFalse(rook.canMove(chessboard, new Square("b2")));
+        assertFalse(rook.canMove(chessboard, new Square("a1")));
     }
 
     @Test

@@ -14,6 +14,7 @@ public class QueenTests {
         chessboard.addPiece(queen);
 
         assertFalse(queen.canMove(chessboard, new Square("b3")));
+        assertFalse(queen.canMove(chessboard, new Square("a1")));
     }
 
     @Test
