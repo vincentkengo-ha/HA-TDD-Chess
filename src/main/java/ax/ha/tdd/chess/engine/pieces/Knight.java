@@ -11,6 +11,9 @@ public class Knight extends ChessPieceBase implements ChessPiece {
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
+        if(chessboard.getPieceAt(destination) != null && chessboard.getPieceAt(destination).getType() == PieceType.KING) {
+            return false;
+        }
         if(destination.getY() == this.location.getY() + 2 || destination.getY() == this.location.getY() - 2) {
             if(destination.getY() == this.location.getX() - 1 || destination.getX() == this.location.getX() + 1) {
                 if(chessboard.getPieceAt(destination) != null && chessboard.getPieceAt(destination).getColor() != this.color) {

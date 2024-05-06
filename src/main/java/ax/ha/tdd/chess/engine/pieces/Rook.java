@@ -12,9 +12,9 @@ public class Rook extends ChessPieceBase implements ChessPiece {
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-        //check for take move first
-        // normal move
-        //might have to check for blocks
+        if(chessboard.getPieceAt(destination) != null && chessboard.getPieceAt(destination).getType() == PieceType.KING) {
+            return false;
+        }
         if(this.location.getX() == destination.getX()) {
             if(this.location.getY() > destination.getY()) {
                 for(int i = this.location.getY() - 1; i > destination.getY(); i--) {

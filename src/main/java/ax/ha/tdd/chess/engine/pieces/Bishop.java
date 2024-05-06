@@ -13,6 +13,9 @@ public class Bishop extends ChessPieceBase implements ChessPiece{
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
+        if(chessboard.getPieceAt(destination) != null && chessboard.getPieceAt(destination).getType() == PieceType.KING) {
+            return false;
+        }
         if(Math.abs(this.location.getX() - destination.getX()) != Math.abs(this.location.getY() - destination.getY()) || Objects.equals(this.location.toAlgebraic(), destination.toAlgebraic())) {
             return false;
         }

@@ -11,6 +11,21 @@ public class King extends ChessPieceBase implements ChessPiece {
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
+        if(chessboard.getPieceAt(destination) != null && chessboard.getPieceAt(destination).getType() == PieceType.KING) {
+            return false;
+        }
+
+        //threatened
+        for(int r = 0; r < 8; r++) {
+            for(int c = 0; c < 8; c++) {
+                if(chessboard.getPieceAt(new Square(r ,c)) != null && chessboard.getPieceAt(new Square(r ,c)).getColor() != this.getColor()) {
+                    if(chessboard.getPieceAt(new Square(r ,c)).canMove(chessboard, destination)) {
+                        return false;
+                    }
+                }
+            }
+        }
+
         boolean validY = destination.getY() <= this.location.getY() + 1 && destination.getY() >= this.location.getY() - 1;
         boolean validX = destination.getX() <= this.location.getX() + 1 && destination.getX() >= this.location.getX() - 1;
         if(validX && validY && destination != this.location) {

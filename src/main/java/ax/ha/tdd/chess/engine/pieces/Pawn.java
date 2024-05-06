@@ -14,7 +14,9 @@ public class Pawn extends ChessPieceBase implements ChessPiece{
 
     @Override
     public boolean canMove(Chessboard chessboard, Square destination) {
-
+        if(chessboard.getPieceAt(destination) != null && chessboard.getPieceAt(destination).getType() == PieceType.KING) {
+            return false;
+        }
         //first move
         System.out.println(this.location.getY() + " " + destination.getY());
         System.out.println(this.location.getX() + " " + destination.getX());
